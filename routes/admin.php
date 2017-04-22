@@ -8,3 +8,4 @@
 
 
 Route::get('/jobseekers', 'AdminController@jobseekers')->name('jobseekers');
+Route::resource('/job','JobAdminController');

@@ -1,19 +1,3 @@
-{{--{!!Html::script('js/jquery-2.2.3.min.js') !!}--}}
-
-{{--{!!Html::script('https://code.jquery.com/ui/1.11.4/jquery-ui.min.js') !!}--}}
-
-{{--{!!Html::script('js/bootstrap.min.js') !!}--}}
-
-{{--{!!Html::script('js/app.min.js') !!}--}}
-
-{{--{!!Html::script('js/custom.js') !!}--}}
-
-{{--<script>--}}
-    {{--$.widget.bridge('uibutton', $.ui.button);--}}
-{{--</script>--}}
-
-{{--</body>--}}
-{{--</html>--}}
 
 <div class="footer">
     <div class="footer-inner">
@@ -44,7 +28,6 @@
 <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
     <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
 </a>
-</div><!-- /.main-container -->
 
 <!-- basic scripts -->
 

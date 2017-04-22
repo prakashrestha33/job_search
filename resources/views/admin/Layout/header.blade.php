@@ -41,10 +41,8 @@
 
                 <li class="light-blue dropdown-modal">
                     <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-                        <img class="nav-user-photo" src="assets/images/avatars/user.jpg" alt="Jason's Photo"/>
                         <span class="user-info">
-									<small>Welcome,</small>
-                            {{ Auth::user()->firstName }}
+                            ADMIN
 								</span>
 
                         <i class="ace-icon fa fa-caret-down"></i>
@@ -94,7 +92,7 @@
                 <b class="arrow"></b>
             </li>
             <li class="">
-                <a href="/admin/jobs">
+                <a href="/admin/job">
                     <i class="menu-icon fa fa-briefcase"></i>
                     <span class="menu-text"> Jobs </span>
                 </a>
