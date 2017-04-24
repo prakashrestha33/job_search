@@ -202,6 +202,7 @@
                     @endif
                 </div>
             </div>
+            {{Form::hidden('job_status',true)}}
             <div align="right" >
                 {{Form::submit('Create Job', array('class'=>'btn btn-sm btn-primary ','title'=>'Save the job'))}}
                 <a type="button" class="btn btn-sm btn-warning" href="/">Cancel</a>
@@ -210,6 +211,7 @@
 
 
         </div>
+    </div>
     </div>
     </div>
 

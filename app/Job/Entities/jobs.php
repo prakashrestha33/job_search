@@ -16,7 +16,7 @@ class jobs extends Model
     protected $fillable = [
         'category_id', 'company_name', 'name', 'opening',
         'short_description', 'total_description', 'requirement', 'salary',
-        'education', 'experience', 'job_location', 'working_hours','job_display_duration',
+        'education', 'experience', 'job_location', 'working_hours','job_display_duration','job_status'
     ];
 
 

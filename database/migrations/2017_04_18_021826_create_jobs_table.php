@@ -15,7 +15,6 @@ class CreateJobsTable extends Migration
     {
         Schema::create('jobs', function (Blueprint $table) {
             $table->increments('id');
-//            $table->integer('category_id')->unsigned();
             $table->string('category_id');
             $table->string('company_name');
             $table->string('name');
@@ -29,9 +28,9 @@ class CreateJobsTable extends Migration
             $table->string('job_location');
             $table->string('working_hours');
             $table->date('job_display_duration');
+            $table->boolean('job_status');
             $table->timestamps();
-//            $table->foreign('category_id')->references('id')->on('category')
-//                ->onUpdate('cascade')->onDelete('cascade');
+
 
         });
     }

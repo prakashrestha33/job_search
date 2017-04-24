@@ -9,6 +9,7 @@
 namespace App\Job\Repositories;
 
 
+use App\Job\Entities\client_job;
 use App\Job\Entities\jobs;
 use Illuminate\Database\QueryException;
 
@@ -18,11 +19,16 @@ class JobRepository
      * @var jobs
      */
     private $jobs;
+    /**
+     * @var client_job
+     */
+    private $client_job;
 
-    public function __construct(jobs $jobs)
+    public function __construct(jobs $jobs,client_job $client_job)
     {
 
         $this->jobs = $jobs;
+        $this->client_job = $client_job;
     }
 
     public function storesJobs($data)

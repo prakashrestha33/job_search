@@ -19,3 +19,6 @@ use Illuminate\Http\Request;
 
 Route::post('/login', 'api\UserController@login');
 Route::post('/register', 'api\UserController@register');
+
+Route::get('/jobs', 'api\JobController@joblist');
+Route::post('/user/{userid}/job', 'api\JobController@apply');
