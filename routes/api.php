@@ -21,4 +21,9 @@ Route::post('/login', 'api\UserController@login');
 Route::post('/register', 'api\UserController@register');
 
 Route::get('/jobs', 'api\JobController@joblist');
+Route::get('/job/{job_id}', 'api\JobController@jobdetail');
+
 Route::post('/user/{userid}/job', 'api\JobController@apply');
+
+//cv
+Route::post('/user/{userid}/cv', 'api\UserController@cv');

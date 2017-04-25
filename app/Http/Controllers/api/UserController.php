@@ -33,4 +33,9 @@ class UserController extends Controller
         return response()->json($result);
 
     }
+    public function cv(Request $request){
+        $data=$request->all();
+        $result = $this->serviceApi->storecv($data);
+        return response()->json($result);
+    }
 }

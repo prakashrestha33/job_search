@@ -88,4 +88,34 @@ class UserServiceApi
             return $resp;
         }
     }
+
+    public function storecv($data)
+    {
+        $ans = $this->repository->isCVExits($data);
+        if ($ans ==null){
+            $cv = $this->repository->storeCV($data);
+            if ($cv== null) {
+                $data = [
+                    "error" => true,
+                    "message" => "User CV Cannot be Created"
+                ];
+                return $data;
+            }
+            $this->repository->updateStatus($cv->user_id);
+            $data = [
+                "error" => false,
+                "message" => "User CV created Successfully",
+            ];
+            return $data;
+        }
+        else {
+            $resp = [
+                'error'=>false,
+                'message' => 'CV already Exists',
+            ];
+            return $resp;
+        }
+        }
+
+
 }

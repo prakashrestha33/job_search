@@ -16,7 +16,14 @@ class CreateCVsTable extends Migration
         Schema::create('c_vs', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
+            $table->bigInteger('contact');
+            $table->text('qualification');
+            $table->text('experience');
+            $table->text('achivement');
+            $table->text('expertise');
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users')
+                ->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

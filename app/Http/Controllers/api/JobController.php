@@ -36,12 +36,19 @@ class JobController extends Controller
        $result=$this->jobService->getalljob();
         return response()->json($result);
     }
+    public function jobdetail($id){
+
+       $result=$this->jobService->getjobbyId($id);
+        return response()->json($result);
+    }
 
     public function apply(Request $request){
         $data = $request->all();
         $result = $this->jobApiService->applyjob($data);
         return response()->json($result);
     }
+
+
 
 
 }
