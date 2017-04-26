@@ -27,3 +27,4 @@ Route::post('/user/{userid}/job', 'api\JobController@apply');
 
 //cv
 Route::post('/user/{userid}/cv', 'api\UserController@cv');
+

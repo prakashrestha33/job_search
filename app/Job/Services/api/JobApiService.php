@@ -51,5 +51,39 @@ class JobApiService
         }
     }
 
+    public function getalljob()
+    {
+        $ans = $this->jobApiRepository->getJobs();
+        if ($ans==null){
+            $query = [
+
+                "error"  => true,
+                "message" => "oops !!! user not valid"
+
+            ];
+
+            return $query;
+        }
+
+        $data=[];
+        $data['error'] = false;
+        $data['message'] = "job list successfully retrieved";
+
+        foreach ($ans as $list){
+            $data["jobs"][]=[
+                "id" => $list->id,
+                "name"=>$list->name,
+                "description"=>$list->short_description,
+                "brief_description"=>$list->total_description,
+                "salary"=>$list->salary,
+                "experience"=>$list->experience,
+                "job_location"=>$list->job_location,
+                "working_hours"=>$list->working_hours,
+            ];
+        }
+
+        return $data;
+    }
+
 
 }

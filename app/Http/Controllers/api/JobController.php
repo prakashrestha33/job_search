@@ -33,7 +33,7 @@ class JobController extends Controller
 
     public function joblist(){
 
-       $result=$this->jobService->getalljob();
+       $result=$this->jobApiService->getalljob();
         return response()->json($result);
     }
     public function jobdetail($id){

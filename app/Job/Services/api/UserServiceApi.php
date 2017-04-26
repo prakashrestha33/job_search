@@ -30,7 +30,7 @@ class UserServiceApi
 
             $query = [
 
-                "status"  => "false",
+                "error"  => true,
                 "message" => "oops !!! user not valid"
 
             ];
@@ -44,7 +44,7 @@ class UserServiceApi
 
             $resp = [
 
-                "status"    => "true",
+                "error"    => false,
                 "id"        => $userId
 
             ];
@@ -54,7 +54,7 @@ class UserServiceApi
 
         $respo = [
 
-            "status"  => "false",
+            "error"  => true,
             "message" => "oops!!! password not valid."
 
         ];
@@ -116,6 +116,4 @@ class UserServiceApi
             return $resp;
         }
         }
-
-
 }

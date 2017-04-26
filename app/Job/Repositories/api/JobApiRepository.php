@@ -10,6 +10,7 @@ namespace App\Job\Repositories\api;
 
 
 use App\Job\Entities\client_job;
+use App\Job\Entities\jobs;
 
 class JobApiRepository
 {
@@ -43,6 +44,15 @@ class JobApiRepository
     {
         $query = client_job::where('user_id',$data['user_id'])->where('job_id',$data['job_id'])->first();
         if ($query == null){
+            return null;
+        }
+        return $query;
+    }
+
+    public function getJobs()
+    {
+        $query = jobs::select('*')->get();
+        if (is_null($query)){
             return null;
         }
         return $query;
