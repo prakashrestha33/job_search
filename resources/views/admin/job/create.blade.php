@@ -32,7 +32,7 @@
 
 
             <div class="form-group{{ $errors->has('company_name') ? ' has-error' : '' }} clearfix">
-                <label for="company_name" class="col-sm-4 control-label">Job Name</label>
+                <label for="company_name" class="col-sm-4 control-label">Company Name</label>
 
                 <div class="col-sm-8">
                     <input id="company_name" type="text" class="form-control" name="company_name" value="{{ old('company_name') }}" required

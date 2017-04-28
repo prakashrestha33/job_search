@@ -35,7 +35,7 @@ class JobRepository
     {
 
         try {
-            $this->jobs->create($data);
+           $this->jobs->create($data);
             return true;
         } catch (QueryException $e) {
             return false;
