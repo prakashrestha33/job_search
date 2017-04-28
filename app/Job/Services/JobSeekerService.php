@@ -29,4 +29,10 @@ class JobSeekerService
     {
         return $this->jobSeekerRepository->getalljobseekers();
     }
+
+    public function getjobseekerapplied()
+    {
+        return $this->jobSeekerRepository->getjobseekersapplied();
+
     }
+}

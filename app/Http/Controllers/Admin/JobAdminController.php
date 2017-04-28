@@ -65,7 +65,8 @@ class JobAdminController extends Controller
      */
     public function show($id)
     {
-        //
+        $job=$this->jobService->getjobbyId($id);
+        return view('admin.job.show',compact('job'));
     }
 
     /**
