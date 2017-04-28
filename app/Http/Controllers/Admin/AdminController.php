@@ -35,4 +35,11 @@ class AdminController extends Controller
    $jobseeker=$this->jobSeekerService->getalljobseeker();
         return view('admin.jobseekers',compact('jobseeker'));
     }
+    public function jobapplied()
+    {
+
+        $jobapplied=$this->jobSeekerService->getjobseekerapplied();
+//        dd($jobapplied);
+        return view('admin.job.jobapplied',compact('jobapplied'));
+    }
 }

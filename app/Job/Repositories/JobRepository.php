@@ -55,22 +55,21 @@ class JobRepository
     public function updateJob($request, $id)
     {
         try {
-
             $query = jobs::find($id);
-            $query->category_id = $request->category_id;
-            $query->company_name = $request->company_name;
-            $query->name = $request->name;
-            $query->opening = $request->opening;
-            $query->short_description = $request->short_description;
-            $query->total_description = $request->total_description;
-            $query->requirement = $request->requirement;
-            $query->salary = $request->salary;
-            $query->education = $request->education;
-            $query->experience = $request->experience;
-            $query->job_location = $request->job_location;
-            $query->working_hours = $request->working_hours;
-            $query->job_display_duration = $request->job_display_duration;
-            $query->save();
+            $query->category_id = $request['category_id'];
+            $query->company_name = $request['company_name'];
+            $query->name = $request['name'];
+            $query->opening = $request['opening'];
+            $query->short_description = $request['short_description'];
+            $query->total_description = $request['total_description'];
+            $query->requirement = $request['requirement'];
+            $query->salary = $request['salary'];
+            $query->education = $request['education'];
+            $query->experience = $request['experience'];
+            $query->job_location = $request['job_location'];
+            $query->working_hours = $request['working_hours'];
+            $query->job_display_duration = $request['job_display_duration'];
+            $query->update();
 
             return true;
         } catch (QueryException $e) {

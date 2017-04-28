@@ -10,6 +10,7 @@
                 <th>ID</th>
                 <th>Name</th>
                 <th>Email</th>
+                <th>CV </th>
 
                 <th>Remarks</th>
 
@@ -23,6 +24,7 @@
                         <td>{{$row->id }}</td>
                         <td>{{$row->name }}</td>
                         <td>{{$row->email }}</td>
+                        <td>@if($row->cv_status==1)Available @else Not Added yet @endif</td>
                         <td></td>
 
                     </tr>
