@@ -1,6 +1,17 @@
 @extends('admin.Layout.app')
 
 @section('main-content')
+    <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+        <ul class="breadcrumb">
+            <li>
+                <i class="ace-icon fa fa-home home-icon"></i>
+                <a href="#">Home</a>
+            </li>
+            <li class="active">Jobseekers</li>
+        </ul><!-- /.breadcrumb -->
+
+
+    </div>
     <div class="panel-body">
         <table id="example1"
                class="table table-striped table-bordered dt-responsive  table-responsive "

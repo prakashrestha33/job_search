@@ -1,7 +1,18 @@
 @extends('admin.Layout.app')
 
 @section('main-content')
+    <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+        <ul class="breadcrumb">
+            <li>
+                <i class="ace-icon fa fa-home home-icon"></i>
+                <a href="#">Home</a>
+            </li>
+            <li class="">Jobs</li>
+            <li class="active">Edit</li>
+        </ul><!-- /.breadcrumb -->
 
+
+    </div>
     <div class=" col-md-8 col-md-offset-2">
         <h3>Edit Job</h3>
         <div class="box box-info clearfix pad">

@@ -4,7 +4,17 @@
 @section('main-content')
 
 <div class="tab-content">
+    <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+        <ul class="breadcrumb">
+            <li>
+                <i class="ace-icon fa fa-home home-icon"></i>
+                <a href="#">Home</a>
+            </li>
+            <li class="active">Jobs</li>
+        </ul><!-- /.breadcrumb -->
 
+
+    </div>
     <!-- Main content -->
     <section class="content">
         <div class="row">
