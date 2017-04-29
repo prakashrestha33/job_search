@@ -110,7 +110,6 @@ class UserServiceApi
                 ];
                 return $data;
             }
-//            dd($cv->user_id);
             $this->repository->updateStatus($cv->user_id);
             $data = [
                 "error" => false,
@@ -126,4 +125,11 @@ class UserServiceApi
             return $resp;
         }
         }
+
+    public function getCV($id)
+    {
+        $cv=$this->repository->getcv($id);
+        return $cv;
+
+    }
 }

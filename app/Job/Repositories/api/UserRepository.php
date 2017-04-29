@@ -97,4 +97,9 @@ class UserRepository
         return $query;
     }
 
+    public function getcv($id)
+    {
+        return $this->CV->select('*')->where('user_id', $id)->first();
+    }
+
 }
