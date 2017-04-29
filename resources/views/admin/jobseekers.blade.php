@@ -24,7 +24,14 @@
                         <td>{{$row->id }}</td>
                         <td>{{$row->name }}</td>
                         <td>{{$row->email }}</td>
-                        <td>@if($row->cv_status==1)Available @else Not Added yet @endif</td>
+                        <td>@if($row->cv_status==1)
+                                <a href="{{route('seeker_cv',$row->id)}}">
+                                    <button class="btn btn-primary btn-sm" data-toggle="popover" data-trigger="hover"
+                                            data-placement="top" data-content="">view</button>
+                                </a>
+
+                            @endif
+                        </td>
                         <td></td>
 
                     </tr>

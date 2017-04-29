@@ -11,6 +11,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Job\Services\JobSeekerService;
+use App\Job\Services\JobService;
 
 class AdminController extends Controller
 {
@@ -18,17 +19,24 @@ class AdminController extends Controller
      * @var JobSeekerService
      */
     private $jobSeekerService;
+    /**
+     * @var JobService
+     */
+    private $jobService;
 
 
-    public function __construct(JobSeekerService $jobSeekerService)
+    public function __construct(JobSeekerService $jobSeekerService, JobService $jobService)
     {
         $this->middleware('auth:admin');
         $this->jobSeekerService = $jobSeekerService;
+        $this->jobService = $jobService;
     }
 
     public function index()
     {
-        return view('admin.dashboard');
+        $jobno=$this->jobService->getalljob();
+        $jobseekerno=$this->jobSeekerService->getalljobseeker();
+        return view('admin.dashboard',compact('jobno','jobseekerno'));
     }
     public function jobseekers()
     {
@@ -37,9 +45,13 @@ class AdminController extends Controller
     }
     public function jobapplied()
     {
-
         $jobapplied=$this->jobSeekerService->getjobseekerapplied();
-//        dd($jobapplied);
         return view('admin.job.jobapplied',compact('jobapplied'));
+    }
+
+    public function cv($id)
+    {
+        $cvs=$this->jobSeekerService->getcvByjobseekerId($id);
+        return view('admin.cv',compact('cvs'));
     }
 }

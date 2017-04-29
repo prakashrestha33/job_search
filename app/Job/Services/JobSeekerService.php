@@ -35,4 +35,9 @@ class JobSeekerService
         return $this->jobSeekerRepository->getjobseekersapplied();
 
     }
+
+    public function getcvByjobseekerId($id)
+    {
+        return $this->jobSeekerRepository->getcvbyjobseekerid($id);
+    }
 }

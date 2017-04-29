@@ -92,6 +92,14 @@
                 <b class="arrow"></b>
             </li>
             <li class="">
+                <a href="/admin/jobseekers/applied">
+                    <i class="menu-icon fa fa-users"></i>
+                    <span class="menu-text"> Job Applied </span>
+                </a>
+
+                <b class="arrow"></b>
+            </li>
+            <li class="">
                 <a href="/admin/job">
                     <i class="menu-icon fa fa-briefcase"></i>
                     <span class="menu-text"> Jobs </span>

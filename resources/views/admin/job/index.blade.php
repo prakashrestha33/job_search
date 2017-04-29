@@ -56,6 +56,10 @@
                                         <td>{{$row->job_location }}</td>
 
                                         <td>
+                                            <a href="{{route('job.show',$row->id)}}">
+                                                <button class="btn btn-primary pad" data-toggle="popover" data-trigger="hover"
+                                                        data-placement="top" data-content="Edit the current product"><i class="fa fa-folder-open"  ></i></button>
+                                            </a>
                                             <a href="{{route('job.edit',$row->id)}}">
                                                 <button class="btn btn-warning pad" data-toggle="popover" data-trigger="hover"
                                                         data-placement="top" data-content="Edit the current product"><i class="fa fa-edit"  ></i></button>

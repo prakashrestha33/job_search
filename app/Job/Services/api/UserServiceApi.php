@@ -93,6 +93,15 @@ class UserServiceApi
     {
         $ans = $this->repository->isCVExits($data);
         if ($ans ==null){
+            $id=$data['user_id'];
+            $imageName = $id . '_' . rand(0, 10000) . '.' . $data['cv_image']->getClientOriginalExtension();
+
+            $destinationPath = storage_path('app/public/cv');
+
+            $data['cv_image']->move($destinationPath, $imageName);
+
+            $data['cv_image'] = $imageName;
+
             $cv = $this->repository->storeCV($data);
             if ($cv== null) {
                 $data = [
@@ -101,6 +110,7 @@ class UserServiceApi
                 ];
                 return $data;
             }
+//            dd($cv->user_id);
             $this->repository->updateStatus($cv->user_id);
             $data = [
                 "error" => false,

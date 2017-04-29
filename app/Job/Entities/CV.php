@@ -14,8 +14,7 @@ class CV extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'contact', 'qualification', 'experience',
-        'achivement', 'expertise',
+        'user_id', 'cv_image',
     ];
 
 }

@@ -8,5 +8,6 @@
 
 
 Route::get('/jobseekers', 'AdminController@jobseekers')->name('jobseekers');
-Route::get('/jobseekers/appied', 'AdminController@jobapplied')->name('jobapplied');
+Route::get('/jobseekers/applied', 'AdminController@jobapplied')->name('jobapplied');
+Route::get('/jobseekers/{user_id}/cv', 'AdminController@cv')->name('seeker_cv');
 Route::resource('/job','JobAdminController');

@@ -26,5 +26,5 @@ Route::get('/job/{job_id}', 'api\JobController@jobdetail');
 Route::post('/user/job', 'api\JobController@apply');
 
 //cv
-Route::post('/user/{userid}/cv', 'api\UserController@cv');
+Route::post('/user/cv', 'api\UserController@cv');
 
