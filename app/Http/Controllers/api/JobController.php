@@ -48,6 +48,12 @@ class JobController extends Controller
         return response()->json($result);
     }
 
+    public function history($id)
+    {
+     $result=$this->jobApiService->userhistory($id);
+     return response()->json($result);
+
+    }
 
 
 

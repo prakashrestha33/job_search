@@ -129,7 +129,11 @@ class UserServiceApi
     public function getCV($id)
     {
         $cv=$this->repository->getcv($id);
-        return $cv;
-
+        $data=[
+            'user_id'=>$cv->user_id,
+            'cv_image'=>$cv->cv_image
+        ];
+        return $data;
     }
+
 }

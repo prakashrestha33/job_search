@@ -58,5 +58,15 @@ class JobApiRepository
         return $query;
     }
 
+    public function getUserapplied($id)
+    {
+        $query = client_job::select('*')->where('user_id',$id)
+                                ->join('jobs','jobs.id','client_jobs.job_id')->get();
+        if ($query == null){
+            return null;
+        }
+        return $query;
+    }
+
 
 }

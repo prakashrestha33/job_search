@@ -25,8 +25,10 @@ Route::get('/job/{job_id}', 'api\JobController@jobdetail');
 
 Route::post('/user/job', 'api\JobController@apply');
 
+
 //cv
 Route::post('/user/cv', 'api\UserController@cv');
 Route::get('/user/{user_id}/cv', 'api\UserController@getcv');
-
+//history
+Route::get('/user/{user_id}/history', 'api\JobController@history');
 

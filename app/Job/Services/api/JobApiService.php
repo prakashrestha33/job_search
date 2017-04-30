@@ -85,5 +85,36 @@ class JobApiService
         return $data;
     }
 
+    public function userhistory($id)
+    {
+
+        $ans = $this->jobApiRepository->getUserapplied($id);
+        if ($ans==null){
+            $query = [
+                "error"  => true,
+                "message" => "No Job Applied so far"
+            ];
+            return $query;
+        }
+        $data=[];
+        $data['error'] = false;
+        $data['message'] = "User History successfully retrieved";
+
+        foreach ($ans as $list){
+            $data["jobs"][]=[
+                "id" => $list->id,
+                "name"=>$list->name,
+                "description"=>$list->short_description,
+                "brief_description"=>$list->total_description,
+                "salary"=>$list->salary,
+                "experience"=>$list->experience,
+                "job_location"=>$list->job_location,
+                "working_hours"=>$list->working_hours,
+            ];
+        }
+        return $data;
+
+    }
+
 
 }
