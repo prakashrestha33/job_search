@@ -130,7 +130,19 @@ class UserServiceApi
     {
         $baseUrl = url('/');
         $cv=$this->repository->getcv($id);
+        if ($cv==null){
+            $query = [
+
+                "error"  => true,
+                "message" => "oops !!! user  doesn't have cv"
+
+            ];
+
+            return $query;
+        }
         $data=[
+            "error"  => false,
+            "message" => "CV retrived successfully",
             'user_id'=>$cv->user_id,
             'cv_image'=>$baseUrl.'/storage/cv/'.$cv->cv_image
         ];
