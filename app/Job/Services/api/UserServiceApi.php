@@ -128,10 +128,11 @@ class UserServiceApi
 
     public function getCV($id)
     {
+        $baseUrl = url('/');
         $cv=$this->repository->getcv($id);
         $data=[
             'user_id'=>$cv->user_id,
-            'cv_image'=>$cv->cv_image
+            'cv_image'=>$baseUrl.'/storage/cv/'.$cv->cv_image
         ];
         return $data;
     }
